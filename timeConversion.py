@@ -14,7 +14,20 @@ import sys
 #
 
 def timeConversion(s):
+    military_time = ""
+    if s[-2:] == "PM":
+        if s[:2] == "12":
+            military_time = s[:-2]
+        else:
+            military_time = str(int(s[:2])+12) + s[2:-2]
+    elif s[-2:] == "AM":
+        if s[:2] == "12":
+            military_time = "00" + s[2:-2]
+        else: military_time = s[:-2]
+    return military_time
+
     # Write your code here
+    
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
