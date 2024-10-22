@@ -30,12 +30,14 @@ def timeConversion(s):
     
 
 if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    output_path = 'YOUR_OUTPUT_PATH'
+    #fptr = open(output_path, 'w')
+    with open(output_path, 'w') as fptr:
 
-    s = input()
+        s = input()
 
-    result = timeConversion(s)
+        result = timeConversion(s)
 
-    fptr.write(result + '\n')
+        fptr.write(result + '\n')
 
-    fptr.close()
+        #fptr.close()
